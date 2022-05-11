@@ -29,44 +29,32 @@ function App() {
       .catch((error) => console.log(error));
   }, []);
 
-  // console.log(countries);
-
   const sortAscending = () => {
     const data = [...countries]; // copy array
     data.sort((a, b) => a.name.toUpperCase().localeCompare(b.name.toUpperCase()));
-
-    // console.log(data);
     setCountries(data);
   };
 
   const sortDescending = () => {
     const data = [...countries]; // copy array
     data.sort((a, b) => b.name.toUpperCase().localeCompare(a.name.toUpperCase()));
-
-    // console.log(data);
     setCountries(data);
   };
 
   const filterCountries = () => {
-    // const countriesSmallerThanLithuania = countries.filter(
-    //   (item) => item.area < item.area.includes("Lithuania")
-    // );
-
-    const filterCountries = countries
-      .filter((item) => item.area < 65300)
-      .filter((item) => item.region.includes("Oceania"));
-
-    // console.log(filterCountries);
+    const filterCountries = countries.filter(
+      (item) => item.area < 65300 && item.region.includes("Oceania")
+    );
     setCountries(filterCountries);
   };
 
   return (
     <div className="App">
       <Title
-        title={"REIZ TECH Assignment for the Front-End Developer intern position"}
-        author={"Albertas Rinkevičius"}
-        email={"albertas.rinkevicius@gmail.com"}
-        mob={"+370 686 05132"}
+        title="REIZ TECH Assignment for the Front-End Developer intern position"
+        author="Albertas Rinkevičius"
+        email="albertas.rinkevicius@gmail.com"
+        mob="+370 686 05132"
       />
       <div className="buttons">
         <div>
